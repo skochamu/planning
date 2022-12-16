@@ -1,0 +1,37 @@
+project_name: 5g-campus-poc
+deployments:
+  5g-campus:
+    release: 0.0.1
+    nsd_name: 5g-campus
+    nsd_version: 0.0.1
+    values_version: 0.0.1_test
+    env: dev
+    template: default
+    helm_repository: 
+      create: false
+      name: mavenir
+      namespace: schiff-tenant
+      url: null
+      secrets: null
+    clusters:
+      t5g-campus-2.refaz.bn:
+        active: true
+        global_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/mavenir/cc/global-values-production.yaml
+        cnfs:
+          mme-wo-vlb:
+            version: 1.0.17-cups-IPv6
+            namespace: mme
+            custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/mavenir/cc/mme/base_values.yaml
+          smf:
+            version: 22.1.5-131-cups
+            namespace: mvnr-mtcil1-appln-smf-smf1
+            custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/mavenir/cc/smf/values.yaml
+            custom_config: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/tree/main/mavenir/cc/smf/config
+          crdladmin:
+            version: 6.6.1-2-v41-2
+            namespace: crdl
+            custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/mavenir/crdl/crdladmin/values.yaml
+        paas:
+          nginx:
+            custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/paas/nginx/values.yaml
+            
