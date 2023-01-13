@@ -1,0 +1,32 @@
+project_name: dso-campus-poc
+deployments:
+  5g-campus:
+    release: 0.0.1
+    env: dev
+    serviceAccountName: m2m-sa
+    nsd_name: ping_pong_k8s_nsd
+    nsd_version: 1.0
+    values_version: 1.1.4
+    template: default
+    helm_repository:
+      create: false
+      name: mavenir
+      namespace: default
+    clusters:
+      bm6:
+        state: active
+        global_values: git@172.17.0.1:planning.git/dso-campus-poc/values.yaml
+        cnfs:
+          ping:
+            name: ping
+            namespace: default
+            custom_values: git@172.17.0.1:planning.git/dso-campus-poc/ping/values.yaml
+          pong:
+            name: pong
+            namespace: default
+            custom_values: git@172.17.0.1:planning.git/dso-campus-poc/pong/values.yaml
+            custom_config: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/tree/main/mavenir/cc/smf/config
+        paas:
+          nginx:
+            custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/paas/nginx/values.yaml
+
