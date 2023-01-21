@@ -1,6 +1,6 @@
 project_name: 5g-campus-poc
 deployments:
-  5g-campus:
+  5g-campus-sar:
     release: 0.0.1
     nsd_name: 5g-campus
     nsd_version: 0.0.1
