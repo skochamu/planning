@@ -10,23 +10,22 @@ deployments:
     template: default
     helm_repository:
       create: false
-      name: mavenir
-      namespace: default
+      name: ananda-helm
+      namespace: flux-system
     clusters:
-      bm6:
+      fluxdc2:
         state: active
-        global_values: git@172.17.0.1:planning.git/dso-campus-poc/values.yaml
+        global_values: https://github.com/skochamu/planning.git/dso-campus-poc/values.yaml
         cnfs:
           ping:
             name: ping
             namespace: default
-            custom_values: git@172.17.0.1:planning.git/dso-campus-poc/ping/values.yaml
+            custom_values: https://github.com/skochamu/planning.git/dso-campus-poc/ping/values.yaml
           pong:
             name: pong
             namespace: default
-            custom_values: git@172.17.0.1:planning.git/dso-campus-poc/pong/values.yaml
+            custom_values: https://github.com/skochamu/planning.git/dso-campus-poc/pong/values.yaml
             custom_config: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/tree/main/mavenir/cc/smf/config
         paas:
           nginx:
             custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/paas/nginx/values.yaml
-
