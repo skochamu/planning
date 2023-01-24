@@ -1,6 +1,6 @@
 project_name: dso-campus-poc
 deployments:
-  5g-campus-new:
+  5g-campus:
     release: 0.0.1
     env: dev
     serviceAccountName: m2m-sa
