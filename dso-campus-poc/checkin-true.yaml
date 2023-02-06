@@ -12,8 +12,10 @@ deployments:
       create: true
       name: ananda-helm
       namespace: flux-system
+      url: null
+      secrets: null
     clusters:
-      fluxdc2:
+      fluxdc:
         state: active
         global_values: https://github.com/skochamu/planning.git/dso-campus-poc/values.yaml
         cnfs:
