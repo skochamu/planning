@@ -12,7 +12,7 @@ deployments:
       create: true
       name: ananda-helm
       namespace: flux-system
-      url: null
+      url: https://github.com/skochamu/helmcharts
       secrets: null
     clusters:
       fluxdc:
