@@ -5,7 +5,7 @@ deployments:
     env: dev
     serviceAccountName: m2m-sa
     nsd_name: ping_pong_k8s_nsd
-    nsd_version: 1.0
+    nsd_version: 2.0
     values_version: 1.1.4
     template: default
     helm_repository:
