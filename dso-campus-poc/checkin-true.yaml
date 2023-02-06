@@ -10,9 +10,9 @@ deployments:
     template: default
     helm_repository:
       create: true
-      name: ananda-helm
+      name: sarath-helm
       namespace: flux-system
-      url: https://github.com/skochamu/helmcharts
+      url: https://github.com/skochamu/helmcharts/charts
       secrets: null
     clusters:
       fluxdc:
