@@ -12,8 +12,8 @@ deployments:
       create: true
       name: sarath-helm
       namespace: flux-system
-      url: https://github.com/skochamu/helmcharts/charts
-      secrets: null
+      helm-repo-url: https://github.com/skochamu/helmcharts/charts
+      helm-url-secrets: helmchart-sarath-secret
     clusters:
       fluxdc:
         state: active
