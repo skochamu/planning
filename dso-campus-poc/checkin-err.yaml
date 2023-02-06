@@ -4,7 +4,7 @@ deployments:
     release: 0.0.1
     env: dev
     serviceAccountName: m2m-sa
-    nsd_name: ping_pong_k8s_nsd
+    nsd_name: ping_pong_k8s_nsd_xxx
     nsd_version: 1.0
     values_version: 1.1.4
     template: default
