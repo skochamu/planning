@@ -13,7 +13,7 @@ deployments:
       name: sarath-helm
       namespace: flux-system
       url: https://github.com/skochamu/helmcharts/charts
-      secrets: helmchart-sarath-secret
+      secrets: null
     clusters:
       fluxdc:
         state: active
