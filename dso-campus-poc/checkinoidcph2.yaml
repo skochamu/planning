@@ -1,0 +1,30 @@
+project_name: dso-campus-poc
+deployments:
+  5g-campus-good:
+    release: 0.0.1
+    env: dev
+    nsd_name: ping_pong_k8s_nsd
+    nsd_version: 1.0
+    values_version: 1.1.4
+    template: default
+    helm_repository:
+      create: false
+      name: sarath-helm
+      namespace: flux-system
+    clusters:
+      fluxdc:
+        state: active
+        global_values: https://github.com/skochamu/planning.git/dso-campus-poc/values.yaml
+        cnfs:
+          ping:
+            name: ping
+            namespace: default
+            custom_values: https://github.com/skochamu/planning.git/dso-campus-poc/ping/values.yaml
+          pong:
+            name: pong
+            namespace: default
+            custom_values: https://github.com/skochamu/planning.git/dso-campus-poc/pong/values.yaml
+            custom_config: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/tree/main/mavenir/cc/smf/config
+        paas:
+          nginx:
+            custom_values: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/blob/main/paas/nginx/values.yaml
