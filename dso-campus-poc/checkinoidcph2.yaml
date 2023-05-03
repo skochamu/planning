@@ -12,7 +12,7 @@ deployments:
       name: sarath-helm
       namespace: flux-system
     clusters:
-      fluxdc:
+      fluxoidcph2:
         state: active
         global_values: https://github.com/skochamu/planning.git/dso-campus-poc/values.yaml
         cnfs:
