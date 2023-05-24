@@ -1,6 +1,6 @@
 project_name: dso-campus-poc
 deployments:
-  5g-campus-oidcph23:
+  5g-campus-oidcph24:
     release: 0.0.1
     env: dev
     nsd_name: ping_pong_k8s_nsd
