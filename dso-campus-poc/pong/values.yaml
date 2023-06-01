@@ -15,7 +15,7 @@ macvlanNetNamespace: "default"
 
 service:
   # Service type
-  type: LoadBalancer
+  type: NodePort
 
 metrics:
   enabled: true
