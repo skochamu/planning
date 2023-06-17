@@ -18,11 +18,11 @@ deployments:
         cnfs:
           ping:
             name: ping
-            namespace: default
+            namespace: fluxverse
             custom_values: https://github.com/skochamu/planning.git/dso-campus-poc/ping/values.yaml
           pong:
             name: pong
-            namespace: default
+            namespace: fluxverse
             custom_values: https://github.com/skochamu/planning.git/dso-campus-poc/pong/values.yaml
             custom_config: https://gitlab.devops.telekom.de/mobile-core/5gc/mavenir-5gc/clusters/reference/t5g-campus-1.refaz.bn/-/tree/main/mavenir/cc/smf/config
         paas:
