@@ -1,0 +1,30 @@
+# Default values for pong
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  # Namespace to deploy the service
+  namespace: fluxverse
+  # ID of NS used to deploy this chart
+  nsId: "1234342"
+
+# Name of network-attachment definition associated with macvlan interface
+macvlanNetName: "fluxverse-macvlan-net1"
+# # Namespace associate with above network-attachment definition associated with macvlan interface
+macvlanNetNamespace: "fluxverse"
+
+service:
+  # Service type
+  type: NodePort
+
+metrics:
+  enabled: true
+  annotations:
+    {
+      scrape: true,
+      path: /api/v1/pong/metrics,
+      port: 18889
+    }
+
+# Select the node for NF to run
+nodeSelector: {}
