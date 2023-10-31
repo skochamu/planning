@@ -1,0 +1,91 @@
+# Default values for api.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  registry: docker.io
+  repository: bitnami/nginx
+  tag: 1.24.0-debian-11-r0
+  digest: ""
+  pullPolicy: IfNotPresent
+imagePullSecrets:
+- name: magenta-cicd-token
+nameOverride:
+fullnameOverride: management-backend-worker
+
+service:
+  enabled: false
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+
+resources:
+  limits:
+    cpu: 2000m
+    memory: 1Gi
+  requests:
+    cpu: 1000m
+    memory: 512Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+replicaCount: 3
+
+podAnnotations: {}
+
+measurement:
+  enabled: true
+  livenessProbe: "/actuator/health/liveness"
+  readinessProbe: "/actuator/health/readiness"
+
+networkPolicy:
+  ingress:
+  - {}
+  egress:
+    database:
+      network: 172.22.131.0/24
+      port: 5432
+
+common:
+  LOGGING_SPRINGFRAMEWORK: "INFO"
+  LOGGING_HIBERNATE: "WARN"
+  LOGGING_NUTSS: "DEBUG"
+  DB_URL: "jdbc:postgresql://172.22.131.59:5432/nutss_sm_dev"
+  ADMIN_ENABLED: "true"
+  PROSIN_ENABLED: "true"
+  PASSWORD_VALIDITY_TIME: "24"
+  JWT_EXPIRATION_TIME: "3600000"
+  PORTAL_SCM_PUBLIC_URL: "https://dev.nutss.telekom-dienste.de/configuration-cockpit/"
+  PORTAL_CC_PUBLIC_URL: "https://dev.nutss.telekom-dienste.de/customer-cockpit/"
+  PORTAL_SERVICE_NUMBER_RETENTION_IN_DAYS: "90"
+  PORTAL_ROUTING_TREE_RETENTION_IN_DAYS: "90"
+  PORTAL_LOGGING_PATH: "/var/log/nutss"
+  SPRING_MAIL_HOST: "mailbb.t-systems.com"
+  SPRING_MAIL_PORT: "25"
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: "false"
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE: "false"
+  SPRING_MAIL_SENDER: "SCM Admin <nutssvsdp-cicd@t-systems.com>"
+  AUDIO_CONVERTER_MOCKED: "false"
+  AUDIO_CONVERTER_URL: http://nutss-management-backend-audio-service:8080
+  AUDIO_CONTENT_SERVER_URL: "https://dev.nutss.telekom-dienste.de"
+
+secrets:
+  DB_USER: bnV0c3Nfc21fZGV2X2FkbQ==
+  DB_PASSWORD: c3RhcnQxMjM=
+  ADMIN_PASSWORD: TnVNTVMjMjA=
+  PROSIN_PASSWORD: TnVNTVMjMjA=
+  JWT_SECRET: 
+    MjQ2OTJlMjkxN2M0YzM3N2JkZjk5MDYxYzE5YmM0ZTZjMGVhMGE3OWZlMGUwZTMxODk0MDEwYTEwYWQwZWU1ZA==
+  SPRING_MAIL_USERNAME: ZnBmLW51dHNzdnNkcC1jaWNkQG1tcy10LXN5c3RlbXMuZGU=
+  SPRING_MAIL_PASSWORD: QXc4OWIraDkxQzQz

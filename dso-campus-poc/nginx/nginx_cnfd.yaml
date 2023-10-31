@@ -1,0 +1,1166 @@
+cnfd:cnfd-catalog:
+    cnfd:cnfd:
+    -   cnfd:chart-info:
+            cnfd:helm:
+                cnfd:name: nginx
+                cnfd:source-location: nginx-14.0.0.tgz
+                cnfd:version: 14.0.0
+        cnfd:connection-point:
+        -   cnfd:id: nginx/cp0
+            cnfd:name: nginx/cp0/default
+        cnfd:description: NGINX Open Source is a web server that can be also used
+            as a reverse proxy, load balancer, and HTTP cache. Recommended for high-demanding
+            sites due to its ability to provide faster content. CNF
+        cnfd:id: d80648ae-d30e-4773-943a-510b21883768
+        cnfd:input-parameter:
+        -   cnfd:element-pointer: $.Values.extraContainerPorts
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraContainerPorts
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: extraContainerPorts
+        -   cnfd:element-pointer: $.Values.initContainers
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: initContainers
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: initContainers
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.image.pullPolicy
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.image.pullPolicy
+            cnfd:value: IfNotPresent
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.image.pullPolicy
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.interval
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.interval
+            cnfd:value: '60'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.interval
+        -   cnfd:element-pointer: $.Values.podSecurityContext.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: podSecurityContext.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: podSecurityContext.enabled
+        -   cnfd:element-pointer: $.Values.readinessProbe.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: readinessProbe.enabled
+            cnfd:value: 'true'
+            cnfd:variable-definition-ref: readinessProbe.enabled
+        -   cnfd:element-pointer: $.Values.autoscaling.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: autoscaling.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: autoscaling.enabled
+        -   cnfd:element-pointer: $.Values.service.sessionAffinity
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.sessionAffinity
+            cnfd:value: None
+            cnfd:variable-definition-ref: service.sessionAffinity
+        -   cnfd:element-pointer: $.Values.healthIngress.secrets
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.secrets
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: healthIngress.secrets
+        -   cnfd:element-pointer: $.Values.metrics.image.pullPolicy
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.image.pullPolicy
+            cnfd:value: IfNotPresent
+            cnfd:variable-definition-ref: metrics.image.pullPolicy
+        -   cnfd:element-pointer: $.Values.hostNetwork
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: hostNetwork
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: hostNetwork
+        -   cnfd:element-pointer: $.Values.kubeVersion
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: kubeVersion
+            cnfd:variable-definition-ref: kubeVersion
+        -   cnfd:element-pointer: $.Values.extraEnvVars
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraEnvVars
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: extraEnvVars
+        -   cnfd:element-pointer: $.Values.args
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: args
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: args
+        -   cnfd:element-pointer: $.Values.image.tag
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.tag
+            cnfd:value: 1.24.0-debian-11-r0
+            cnfd:variable-definition-ref: image.tag
+        -   cnfd:element-pointer: $.Values.staticSitePVC
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: staticSitePVC
+            cnfd:variable-definition-ref: staticSitePVC
+        -   cnfd:element-pointer: $.Values.nameOverride
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: nameOverride
+            cnfd:variable-definition-ref: nameOverride
+        -   cnfd:element-pointer: $.Values.topologySpreadConstraints
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: topologySpreadConstraints
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: topologySpreadConstraints
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.image.repository
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.image.repository
+            cnfd:value: bitnami/git
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.image.repository
+        -   cnfd:element-pointer: $.Values.livenessProbe.timeoutSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: livenessProbe.timeoutSeconds
+            cnfd:value: '5'
+            cnfd:variable-definition-ref: livenessProbe.timeoutSeconds
+        -   cnfd:element-pointer: $.Values.pdb.create
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: pdb.create
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: pdb.create
+        -   cnfd:element-pointer: $.Values.service.loadBalancerSourceRanges
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.loadBalancerSourceRanges
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: service.loadBalancerSourceRanges
+        -   cnfd:element-pointer: $.Values.schedulerName
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: schedulerName
+            cnfd:variable-definition-ref: schedulerName
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.gitSync.command
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.gitSync.command
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.gitSync.command
+        -   cnfd:element-pointer: $.Values.metrics.image.pullSecrets
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.image.pullSecrets
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: metrics.image.pullSecrets
+        -   cnfd:element-pointer: $.Values.autoscaling.minReplicas
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: autoscaling.minReplicas
+            cnfd:variable-definition-ref: autoscaling.minReplicas
+        -   cnfd:element-pointer: $.Values.service.nodePorts.https
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.nodePorts.https
+            cnfd:variable-definition-ref: service.nodePorts.https
+        -   cnfd:element-pointer: $.Values.service.targetPort.http
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.targetPort.http
+            cnfd:value: http
+            cnfd:variable-definition-ref: service.targetPort.http
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.relabelings
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.relabelings
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: metrics.serviceMonitor.relabelings
+        -   cnfd:element-pointer: $.Values.metrics.image.digest
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.image.digest
+            cnfd:variable-definition-ref: metrics.image.digest
+        -   cnfd:element-pointer: $.Values.podSecurityContext.fsGroup
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: podSecurityContext.fsGroup
+            cnfd:value: '1001'
+            cnfd:variable-definition-ref: podSecurityContext.fsGroup
+        -   cnfd:element-pointer: $.Values.existingServerBlockConfigmap
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: existingServerBlockConfigmap
+            cnfd:variable-definition-ref: existingServerBlockConfigmap
+        -   cnfd:element-pointer: $.Values.priorityClassName
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: priorityClassName
+            cnfd:variable-definition-ref: priorityClassName
+        -   cnfd:element-pointer: $.Values.ingress.pathType
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.pathType
+            cnfd:value: ImplementationSpecific
+            cnfd:variable-definition-ref: ingress.pathType
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.gitClone.args
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.gitClone.args
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.gitClone.args
+        -   cnfd:element-pointer: $.Values.readinessProbe.failureThreshold
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: readinessProbe.failureThreshold
+            cnfd:value: '3'
+            cnfd:variable-definition-ref: readinessProbe.failureThreshold
+        -   cnfd:element-pointer: $.Values.livenessProbe.initialDelaySeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: livenessProbe.initialDelaySeconds
+            cnfd:value: '30'
+            cnfd:variable-definition-ref: livenessProbe.initialDelaySeconds
+        -   cnfd:element-pointer: $.Values.autoscaling.targetCPU
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: autoscaling.targetCPU
+            cnfd:variable-definition-ref: autoscaling.targetCPU
+        -   cnfd:element-pointer: $.Values.autoscaling.targetMemory
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: autoscaling.targetMemory
+            cnfd:variable-definition-ref: autoscaling.targetMemory
+        -   cnfd:element-pointer: $.Values.metrics.image.tag
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.image.tag
+            cnfd:value: 0.11.0-debian-11-r74
+            cnfd:variable-definition-ref: metrics.image.tag
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.repository
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.repository
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.repository
+        -   cnfd:element-pointer: $.Values.livenessProbe.successThreshold
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: livenessProbe.successThreshold
+            cnfd:value: '1'
+            cnfd:variable-definition-ref: livenessProbe.successThreshold
+        -   cnfd:element-pointer: $.Values.metrics.prometheusRule.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.prometheusRule.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: metrics.prometheusRule.enabled
+        -   cnfd:element-pointer: $.Values.global.imagePullSecrets
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: global.imagePullSecrets
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: global.imagePullSecrets
+        -   cnfd:element-pointer: $.Values.containerSecurityContext.runAsUser
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: containerSecurityContext.runAsUser
+            cnfd:value: '1001'
+            cnfd:variable-definition-ref: containerSecurityContext.runAsUser
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.extraEnvVars
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.extraEnvVars
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.extraEnvVars
+        -   cnfd:element-pointer: $.Values.extraVolumeMounts
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraVolumeMounts
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: extraVolumeMounts
+        -   cnfd:element-pointer: $.Values.metrics.securityContext.runAsUser
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.securityContext.runAsUser
+            cnfd:value: '1001'
+            cnfd:variable-definition-ref: metrics.securityContext.runAsUser
+        -   cnfd:element-pointer: $.Values.pdb.minAvailable
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: pdb.minAvailable
+            cnfd:value: '1'
+            cnfd:variable-definition-ref: pdb.minAvailable
+        -   cnfd:element-pointer: $.Values.readinessProbe.timeoutSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: readinessProbe.timeoutSeconds
+            cnfd:value: '3'
+            cnfd:variable-definition-ref: readinessProbe.timeoutSeconds
+        -   cnfd:element-pointer: $.Values.ingress.tls
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.tls
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: ingress.tls
+        -   cnfd:element-pointer: $.Values.extraDeploy
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraDeploy
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: extraDeploy
+        -   cnfd:element-pointer: $.Values.global.imageRegistry
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: global.imageRegistry
+            cnfd:variable-definition-ref: global.imageRegistry
+        -   cnfd:element-pointer: $.Values.diagnosticMode.args
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: diagnosticMode.args
+            cnfd:value: '["infinity"]'
+            cnfd:variable-definition-ref: diagnosticMode.args
+        -   cnfd:element-pointer: $.Values.healthIngress.hostname
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.hostname
+            cnfd:value: example.local
+            cnfd:variable-definition-ref: healthIngress.hostname
+        -   cnfd:element-pointer: $.Values.hostIPC
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: hostIPC
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: hostIPC
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.image.registry
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.image.registry
+            cnfd:value: docker.io
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.image.registry
+        -   cnfd:element-pointer: $.Values.ingress.apiVersion
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.apiVersion
+            cnfd:variable-definition-ref: ingress.apiVersion
+        -   cnfd:element-pointer: $.Values.serviceAccount.name
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: serviceAccount.name
+            cnfd:variable-definition-ref: serviceAccount.name
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.honorLabels
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.honorLabels
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: metrics.serviceMonitor.honorLabels
+        -   cnfd:element-pointer: $.Values.nodeAffinityPreset.key
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: nodeAffinityPreset.key
+            cnfd:variable-definition-ref: nodeAffinityPreset.key
+        -   cnfd:element-pointer: $.Values.extraVolumes
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraVolumes
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: extraVolumes
+        -   cnfd:element-pointer: $.Values.image.debug
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.debug
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: image.debug
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.scrapeTimeout
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.scrapeTimeout
+            cnfd:variable-definition-ref: metrics.serviceMonitor.scrapeTimeout
+        -   cnfd:element-pointer: $.Values.autoscaling.maxReplicas
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: autoscaling.maxReplicas
+            cnfd:variable-definition-ref: autoscaling.maxReplicas
+        -   cnfd:element-pointer: $.Values.terminationGracePeriodSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: terminationGracePeriodSeconds
+            cnfd:variable-definition-ref: terminationGracePeriodSeconds
+        -   cnfd:element-pointer: $.Values.ingress.extraRules
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.extraRules
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: ingress.extraRules
+        -   cnfd:element-pointer: $.Values.image.pullSecrets
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.pullSecrets
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: image.pullSecrets
+        -   cnfd:element-pointer: $.Values.metrics.service.annotations.prometheus.io/port
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.service.annotations.prometheus.io/port
+            cnfd:value: '{{ .Values.metrics.service.port }}'
+            cnfd:variable-definition-ref: metrics.service.annotations.prometheus.io/port
+        -   cnfd:element-pointer: $.Values.staticSiteConfigmap
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: staticSiteConfigmap
+            cnfd:variable-definition-ref: staticSiteConfigmap
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.extraVolumeMounts
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.extraVolumeMounts
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.extraVolumeMounts
+        -   cnfd:element-pointer: $.Values.replicaCount
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: replicaCount
+            cnfd:value: '1'
+            cnfd:variable-definition-ref: replicaCount
+        -   cnfd:element-pointer: $.Values.metrics.securityContext.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.securityContext.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: metrics.securityContext.enabled
+        -   cnfd:element-pointer: $.Values.sidecars
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: sidecars
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: sidecars
+        -   cnfd:element-pointer: $.Values.healthIngress.ingressClassName
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.ingressClassName
+            cnfd:variable-definition-ref: healthIngress.ingressClassName
+        -   cnfd:element-pointer: $.Values.extraEnvVarsCM
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraEnvVarsCM
+            cnfd:variable-definition-ref: extraEnvVarsCM
+        -   cnfd:element-pointer: $.Values.image.registry
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.registry
+            cnfd:value: docker.io
+            cnfd:variable-definition-ref: image.registry
+        -   cnfd:element-pointer: $.Values.command
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: command
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: command
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.gitSync.args
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.gitSync.args
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.gitSync.args
+        -   cnfd:element-pointer: $.Values.metrics.prometheusRule.namespace
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.prometheusRule.namespace
+            cnfd:variable-definition-ref: metrics.prometheusRule.namespace
+        -   cnfd:element-pointer: $.Values.livenessProbe.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: livenessProbe.enabled
+            cnfd:value: 'true'
+            cnfd:variable-definition-ref: livenessProbe.enabled
+        -   cnfd:element-pointer: $.Values.podAntiAffinityPreset
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: podAntiAffinityPreset
+            cnfd:value: soft
+            cnfd:variable-definition-ref: podAntiAffinityPreset
+        -   cnfd:element-pointer: $.Values.ingress.extraPaths
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.extraPaths
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: ingress.extraPaths
+        -   cnfd:element-pointer: $.Values.startupProbe.timeoutSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: startupProbe.timeoutSeconds
+            cnfd:value: '5'
+            cnfd:variable-definition-ref: startupProbe.timeoutSeconds
+        -   cnfd:element-pointer: $.Values.podSecurityContext.sysctls
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: podSecurityContext.sysctls
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: podSecurityContext.sysctls
+        -   cnfd:element-pointer: $.Values.readinessProbe.periodSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: readinessProbe.periodSeconds
+            cnfd:value: '5'
+            cnfd:variable-definition-ref: readinessProbe.periodSeconds
+        -   cnfd:element-pointer: $.Values.sidecarSingleProcessNamespace
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: sidecarSingleProcessNamespace
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: sidecarSingleProcessNamespace
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.namespace
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.namespace
+            cnfd:variable-definition-ref: metrics.serviceMonitor.namespace
+        -   cnfd:element-pointer: $.Values.extraEnvVarsSecret
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: extraEnvVarsSecret
+            cnfd:variable-definition-ref: extraEnvVarsSecret
+        -   cnfd:element-pointer: $.Values.metrics.image.repository
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.image.repository
+            cnfd:value: bitnami/nginx-exporter
+            cnfd:variable-definition-ref: metrics.image.repository
+        -   cnfd:description: Custom config file for the CNF
+            cnfd:element-pointer: $.Values.custom-config
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: custom-config
+            cnfd:variable-definition-ref: custom-config
+        -   cnfd:element-pointer: $.Values.nodeAffinityPreset.values
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: nodeAffinityPreset.values
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: nodeAffinityPreset.values
+        -   cnfd:element-pointer: $.Values.healthIngress.path
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.path
+            cnfd:value: /
+            cnfd:variable-definition-ref: healthIngress.path
+        -   cnfd:element-pointer: $.Values.containerPorts.https
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: containerPorts.https
+            cnfd:variable-definition-ref: containerPorts.https
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.gitClone.command
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.gitClone.command
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.gitClone.command
+        -   cnfd:description: Name for the Helm release
+            cnfd:element-pointer: $.Values.release.name
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: release.name
+            cnfd:variable-definition-ref: release.name
+        -   cnfd:element-pointer: $.Values.pdb.maxUnavailable
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: pdb.maxUnavailable
+            cnfd:value: '0'
+            cnfd:variable-definition-ref: pdb.maxUnavailable
+        -   cnfd:element-pointer: $.Values.diagnosticMode.command
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: diagnosticMode.command
+            cnfd:value: '["sleep"]'
+            cnfd:variable-definition-ref: diagnosticMode.command
+        -   cnfd:element-pointer: $.Values.metrics.port
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.port
+            cnfd:variable-definition-ref: metrics.port
+        -   cnfd:element-pointer: $.Values.service.nodePorts.http
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.nodePorts.http
+            cnfd:variable-definition-ref: service.nodePorts.http
+        -   cnfd:element-pointer: $.Values.metrics.image.registry
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.image.registry
+            cnfd:value: docker.io
+            cnfd:variable-definition-ref: metrics.image.registry
+        -   cnfd:element-pointer: $.Values.service.loadBalancerIP
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.loadBalancerIP
+            cnfd:variable-definition-ref: service.loadBalancerIP
+        -   cnfd:element-pointer: $.Values.startupProbe.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: startupProbe.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: startupProbe.enabled
+        -   cnfd:element-pointer: $.Values.nodeAffinityPreset.type
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: nodeAffinityPreset.type
+            cnfd:variable-definition-ref: nodeAffinityPreset.type
+        -   cnfd:element-pointer: $.Values.metrics.prometheusRule.rules
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.prometheusRule.rules
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: metrics.prometheusRule.rules
+        -   cnfd:element-pointer: $.Values.healthIngress.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: healthIngress.enabled
+        -   cnfd:element-pointer: $.Values.metrics.service.annotations.prometheus.io/scrape
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.service.annotations.prometheus.io/scrape
+            cnfd:value: 'true'
+            cnfd:variable-definition-ref: metrics.service.annotations.prometheus.io/scrape
+        -   cnfd:element-pointer: $.Values.healthIngress.extraRules
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.extraRules
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: healthIngress.extraRules
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.jobLabel
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.jobLabel
+            cnfd:variable-definition-ref: metrics.serviceMonitor.jobLabel
+        -   cnfd:element-pointer: $.Values.livenessProbe.periodSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: livenessProbe.periodSeconds
+            cnfd:value: '10'
+            cnfd:variable-definition-ref: livenessProbe.periodSeconds
+        -   cnfd:element-pointer: $.Values.service.ports.http
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.ports.http
+            cnfd:value: '80'
+            cnfd:variable-definition-ref: service.ports.http
+        -   cnfd:element-pointer: $.Values.updateStrategy.type
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: updateStrategy.type
+            cnfd:value: RollingUpdate
+            cnfd:variable-definition-ref: updateStrategy.type
+        -   cnfd:element-pointer: $.Values.diagnosticMode.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: diagnosticMode.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: diagnosticMode.enabled
+        -   cnfd:element-pointer: $.Values.healthIngress.pathType
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.pathType
+            cnfd:value: ImplementationSpecific
+            cnfd:variable-definition-ref: healthIngress.pathType
+        -   cnfd:element-pointer: $.Values.hostAliases
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: hostAliases
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: hostAliases
+        -   cnfd:element-pointer: $.Values.image.digest
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.digest
+            cnfd:variable-definition-ref: image.digest
+        -   cnfd:element-pointer: $.Values.ingress.extraTls
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.extraTls
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: ingress.extraTls
+        -   cnfd:description: Namespace for the Helm release
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: release.namespace
+            cnfd:value: sp-test-nginx1
+            cnfd:variable-definition-ref: release.namespace
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.metricRelabelings
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.metricRelabelings
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: metrics.serviceMonitor.metricRelabelings
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.interval
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.interval
+            cnfd:variable-definition-ref: metrics.serviceMonitor.interval
+        -   cnfd:element-pointer: $.Values.startupProbe.initialDelaySeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: startupProbe.initialDelaySeconds
+            cnfd:value: '30'
+            cnfd:variable-definition-ref: startupProbe.initialDelaySeconds
+        -   cnfd:element-pointer: $.Values.fullnameOverride
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: fullnameOverride
+            cnfd:variable-definition-ref: fullnameOverride
+        -   cnfd:element-pointer: $.Values.startupProbe.successThreshold
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: startupProbe.successThreshold
+            cnfd:value: '1'
+            cnfd:variable-definition-ref: startupProbe.successThreshold
+        -   cnfd:element-pointer: $.Values.metrics.service.port
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.service.port
+            cnfd:value: '9113'
+            cnfd:variable-definition-ref: metrics.service.port
+        -   cnfd:element-pointer: $.Values.containerSecurityContext.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: containerSecurityContext.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: containerSecurityContext.enabled
+        -   cnfd:element-pointer: $.Values.service.externalTrafficPolicy
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.externalTrafficPolicy
+            cnfd:value: Cluster
+            cnfd:variable-definition-ref: service.externalTrafficPolicy
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.enabled
+        -   cnfd:element-pointer: $.Values.serviceAccount.automountServiceAccountToken
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: serviceAccount.automountServiceAccountToken
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: serviceAccount.automountServiceAccountToken
+        -   cnfd:element-pointer: $.Values.ingress.extraHosts
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.extraHosts
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: ingress.extraHosts
+        -   cnfd:element-pointer: $.Values.healthIngress.tls
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.tls
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: healthIngress.tls
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.image.pullSecrets
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.image.pullSecrets
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.image.pullSecrets
+        -   cnfd:element-pointer: $.Values.service.type
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.type
+            cnfd:value: LoadBalancer
+            cnfd:variable-definition-ref: service.type
+        -   cnfd:element-pointer: $.Values.ingress.ingressClassName
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.ingressClassName
+            cnfd:variable-definition-ref: ingress.ingressClassName
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.image.tag
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.image.tag
+            cnfd:value: 2.40.0-debian-11-r12
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.image.tag
+        -   cnfd:element-pointer: $.Values.service.clusterIP
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.clusterIP
+            cnfd:variable-definition-ref: service.clusterIP
+        -   cnfd:element-pointer: $.Values.tolerations
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: tolerations
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: tolerations
+        -   cnfd:element-pointer: $.Values.serverBlock
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: serverBlock
+            cnfd:variable-definition-ref: serverBlock
+        -   cnfd:element-pointer: $.Values.service.extraPorts
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.extraPorts
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: service.extraPorts
+        -   cnfd:element-pointer: $.Values.ingress.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: ingress.enabled
+        -   cnfd:element-pointer: $.Values.readinessProbe.initialDelaySeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: readinessProbe.initialDelaySeconds
+            cnfd:value: '5'
+            cnfd:variable-definition-ref: readinessProbe.initialDelaySeconds
+        -   cnfd:element-pointer: $.Values.ingress.selfSigned
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.selfSigned
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: ingress.selfSigned
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.image.digest
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.image.digest
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.image.digest
+        -   cnfd:element-pointer: $.Values.containerPorts.http
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: containerPorts.http
+            cnfd:value: '8080'
+            cnfd:variable-definition-ref: containerPorts.http
+        -   cnfd:element-pointer: $.Values.containerSecurityContext.runAsNonRoot
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: containerSecurityContext.runAsNonRoot
+            cnfd:value: 'true'
+            cnfd:variable-definition-ref: containerSecurityContext.runAsNonRoot
+        -   cnfd:element-pointer: $.Values.service.targetPort.https
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.targetPort.https
+            cnfd:value: https
+            cnfd:variable-definition-ref: service.targetPort.https
+        -   cnfd:element-pointer: $.Values.service.ports.https
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: service.ports.https
+            cnfd:value: '443'
+            cnfd:variable-definition-ref: service.ports.https
+        -   cnfd:element-pointer: $.Values.startupProbe.failureThreshold
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: startupProbe.failureThreshold
+            cnfd:value: '6'
+            cnfd:variable-definition-ref: startupProbe.failureThreshold
+        -   cnfd:element-pointer: $.Values.livenessProbe.failureThreshold
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: livenessProbe.failureThreshold
+            cnfd:value: '6'
+            cnfd:variable-definition-ref: livenessProbe.failureThreshold
+        -   cnfd:element-pointer: $.Values.serviceAccount.create
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: serviceAccount.create
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: serviceAccount.create
+        -   cnfd:element-pointer: $.Values.ingress.path
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.path
+            cnfd:value: /
+            cnfd:variable-definition-ref: ingress.path
+        -   cnfd:element-pointer: $.Values.clusterDomain
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: clusterDomain
+            cnfd:value: cluster.local
+            cnfd:variable-definition-ref: clusterDomain
+        -   cnfd:element-pointer: $.Values.podAffinityPreset
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: podAffinityPreset
+            cnfd:variable-definition-ref: podAffinityPreset
+        -   cnfd:element-pointer: $.Values.image.repository
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.repository
+            cnfd:value: bitnami/nginx
+            cnfd:variable-definition-ref: image.repository
+        -   cnfd:element-pointer: $.Values.healthIngress.selfSigned
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.selfSigned
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: healthIngress.selfSigned
+        -   cnfd:element-pointer: $.Values.healthIngress.extraPaths
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.extraPaths
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: healthIngress.extraPaths
+        -   cnfd:element-pointer: $.Values.readinessProbe.successThreshold
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: readinessProbe.successThreshold
+            cnfd:value: '1'
+            cnfd:variable-definition-ref: readinessProbe.successThreshold
+        -   cnfd:element-pointer: $.Values.ingress.hostname
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.hostname
+            cnfd:value: nginx.local
+            cnfd:variable-definition-ref: ingress.hostname
+        -   cnfd:element-pointer: $.Values.image.pullPolicy
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: image.pullPolicy
+            cnfd:value: IfNotPresent
+            cnfd:variable-definition-ref: image.pullPolicy
+        -   cnfd:element-pointer: $.Values.metrics.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: metrics.enabled
+        -   cnfd:element-pointer: $.Values.cloneStaticSiteFromGit.branch
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: cloneStaticSiteFromGit.branch
+            cnfd:variable-definition-ref: cloneStaticSiteFromGit.branch
+        -   cnfd:element-pointer: $.Values.namespaceOverride
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: namespaceOverride
+            cnfd:variable-definition-ref: namespaceOverride
+        -   cnfd:element-pointer: $.Values.healthIngress.extraHosts
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.extraHosts
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: healthIngress.extraHosts
+        -   cnfd:element-pointer: $.Values.healthIngress.extraTls
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: healthIngress.extraTls
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: healthIngress.extraTls
+        -   cnfd:element-pointer: $.Values.startupProbe.periodSeconds
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: startupProbe.periodSeconds
+            cnfd:value: '10'
+            cnfd:variable-definition-ref: startupProbe.periodSeconds
+        -   cnfd:element-pointer: $.Values.metrics.serviceMonitor.enabled
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: metrics.serviceMonitor.enabled
+            cnfd:value: 'false'
+            cnfd:variable-definition-ref: metrics.serviceMonitor.enabled
+        -   cnfd:element-pointer: $.Values.ingress.secrets
+            cnfd:is-scale-parameter: 'false'
+            cnfd:name: ingress.secrets
+            cnfd:value: '[]'
+            cnfd:variable-definition-ref: ingress.secrets
+        cnfd:meta: '{"containerPositionMap":{"d80648ae-d30e-4773-943a-510b21883768":{"top":30,"left":260,"right":510,"bottom":85,"width":250,"height":55},"d80648ae-d30e-4773-943a-510b21883768/nginx":{"top":130,"left":260,"right":510,"bottom":185,"width":250,"height":55}}}'
+        cnfd:microservice:
+        -   cnfd:dependency-tier: '0'
+            cnfd:interface:
+            -   cnfd:connection-point-ref: nginx/cp0
+                cnfd:name: default
+            cnfd:name: nginx
+            cnfd:resource:
+            -   cnfd:kind: Service
+                cnfd:name: template-test-nginx
+                cnfd:source-file: nginx/templates/svc.yaml
+            -   cnfd:kind: Deployment
+                cnfd:name: template-test-nginx
+                cnfd:source-file: nginx/templates/deployment.yaml
+            cnfd:service:
+            -   cnfd:name: template-test-nginx
+                cnfd:port:
+                -   cnfd:name: http
+                    cnfd:port-number: '80'
+                    cnfd:protocol: tcp
+                cnfd:service-type: load-balancer
+            cnfd:version: 14.0.0
+        cnfd:model-version: '1.9'
+        cnfd:name: nginx_cnfd
+        cnfd:package-type: helm
+        cnfd:short-name: nginx_cnfd
+        cnfd:variable-definition:
+        -   cnfd:name: extraContainerPorts
+            cnfd:value-type: array
+        -   cnfd:name: initContainers
+            cnfd:value-type: array
+        -   cnfd:name: cloneStaticSiteFromGit.image.pullPolicy
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.interval
+            cnfd:value-type: number
+        -   cnfd:name: podSecurityContext.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: readinessProbe.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: autoscaling.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: service.sessionAffinity
+            cnfd:value-type: string
+        -   cnfd:name: healthIngress.secrets
+            cnfd:value-type: array
+        -   cnfd:name: metrics.image.pullPolicy
+            cnfd:value-type: string
+        -   cnfd:name: hostNetwork
+            cnfd:value-type: boolean
+        -   cnfd:name: kubeVersion
+            cnfd:value-type: string
+        -   cnfd:name: extraEnvVars
+            cnfd:value-type: array
+        -   cnfd:name: args
+            cnfd:value-type: array
+        -   cnfd:name: image.tag
+            cnfd:value-type: string
+        -   cnfd:name: staticSitePVC
+            cnfd:value-type: string
+        -   cnfd:name: nameOverride
+            cnfd:value-type: string
+        -   cnfd:name: topologySpreadConstraints
+            cnfd:value-type: array
+        -   cnfd:name: cloneStaticSiteFromGit.image.repository
+            cnfd:value-type: string
+        -   cnfd:name: livenessProbe.timeoutSeconds
+            cnfd:value-type: number
+        -   cnfd:name: pdb.create
+            cnfd:value-type: boolean
+        -   cnfd:name: service.loadBalancerSourceRanges
+            cnfd:value-type: array
+        -   cnfd:name: schedulerName
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.gitSync.command
+            cnfd:value-type: array
+        -   cnfd:name: metrics.image.pullSecrets
+            cnfd:value-type: array
+        -   cnfd:name: autoscaling.minReplicas
+            cnfd:value-type: string
+        -   cnfd:name: service.nodePorts.https
+            cnfd:value-type: string
+        -   cnfd:name: service.targetPort.http
+            cnfd:value-type: string
+        -   cnfd:name: metrics.serviceMonitor.relabelings
+            cnfd:value-type: array
+        -   cnfd:name: metrics.image.digest
+            cnfd:value-type: string
+        -   cnfd:name: podSecurityContext.fsGroup
+            cnfd:value-type: number
+        -   cnfd:name: existingServerBlockConfigmap
+            cnfd:value-type: string
+        -   cnfd:name: priorityClassName
+            cnfd:value-type: string
+        -   cnfd:name: ingress.pathType
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.gitClone.args
+            cnfd:value-type: array
+        -   cnfd:name: readinessProbe.failureThreshold
+            cnfd:value-type: number
+        -   cnfd:name: livenessProbe.initialDelaySeconds
+            cnfd:value-type: number
+        -   cnfd:name: autoscaling.targetCPU
+            cnfd:value-type: string
+        -   cnfd:name: autoscaling.targetMemory
+            cnfd:value-type: string
+        -   cnfd:name: metrics.image.tag
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.repository
+            cnfd:value-type: string
+        -   cnfd:name: livenessProbe.successThreshold
+            cnfd:value-type: number
+        -   cnfd:name: metrics.prometheusRule.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: global.imagePullSecrets
+            cnfd:value-type: array
+        -   cnfd:name: containerSecurityContext.runAsUser
+            cnfd:value-type: number
+        -   cnfd:name: cloneStaticSiteFromGit.extraEnvVars
+            cnfd:value-type: array
+        -   cnfd:name: extraVolumeMounts
+            cnfd:value-type: array
+        -   cnfd:name: metrics.securityContext.runAsUser
+            cnfd:value-type: number
+        -   cnfd:name: pdb.minAvailable
+            cnfd:value-type: number
+        -   cnfd:name: readinessProbe.timeoutSeconds
+            cnfd:value-type: number
+        -   cnfd:name: ingress.tls
+            cnfd:value-type: boolean
+        -   cnfd:name: extraDeploy
+            cnfd:value-type: array
+        -   cnfd:name: global.imageRegistry
+            cnfd:value-type: string
+        -   cnfd:name: diagnosticMode.args
+            cnfd:value-type: array
+        -   cnfd:name: healthIngress.hostname
+            cnfd:value-type: string
+        -   cnfd:name: hostIPC
+            cnfd:value-type: boolean
+        -   cnfd:name: cloneStaticSiteFromGit.image.registry
+            cnfd:value-type: string
+        -   cnfd:name: ingress.apiVersion
+            cnfd:value-type: string
+        -   cnfd:name: serviceAccount.name
+            cnfd:value-type: string
+        -   cnfd:name: metrics.serviceMonitor.honorLabels
+            cnfd:value-type: boolean
+        -   cnfd:name: nodeAffinityPreset.key
+            cnfd:value-type: string
+        -   cnfd:name: extraVolumes
+            cnfd:value-type: array
+        -   cnfd:name: image.debug
+            cnfd:value-type: boolean
+        -   cnfd:name: metrics.serviceMonitor.scrapeTimeout
+            cnfd:value-type: string
+        -   cnfd:name: autoscaling.maxReplicas
+            cnfd:value-type: string
+        -   cnfd:name: terminationGracePeriodSeconds
+            cnfd:value-type: string
+        -   cnfd:name: ingress.extraRules
+            cnfd:value-type: array
+        -   cnfd:name: image.pullSecrets
+            cnfd:value-type: array
+        -   cnfd:name: metrics.service.annotations.prometheus.io/port
+            cnfd:value-type: string
+        -   cnfd:name: staticSiteConfigmap
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.extraVolumeMounts
+            cnfd:value-type: array
+        -   cnfd:name: replicaCount
+            cnfd:value-type: number
+        -   cnfd:name: metrics.securityContext.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: sidecars
+            cnfd:value-type: array
+        -   cnfd:name: healthIngress.ingressClassName
+            cnfd:value-type: string
+        -   cnfd:name: extraEnvVarsCM
+            cnfd:value-type: string
+        -   cnfd:name: image.registry
+            cnfd:value-type: string
+        -   cnfd:name: command
+            cnfd:value-type: array
+        -   cnfd:name: cloneStaticSiteFromGit.gitSync.args
+            cnfd:value-type: array
+        -   cnfd:name: metrics.prometheusRule.namespace
+            cnfd:value-type: string
+        -   cnfd:name: livenessProbe.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: podAntiAffinityPreset
+            cnfd:value-type: string
+        -   cnfd:name: ingress.extraPaths
+            cnfd:value-type: array
+        -   cnfd:name: startupProbe.timeoutSeconds
+            cnfd:value-type: number
+        -   cnfd:name: podSecurityContext.sysctls
+            cnfd:value-type: array
+        -   cnfd:name: readinessProbe.periodSeconds
+            cnfd:value-type: number
+        -   cnfd:name: sidecarSingleProcessNamespace
+            cnfd:value-type: boolean
+        -   cnfd:name: metrics.serviceMonitor.namespace
+            cnfd:value-type: string
+        -   cnfd:name: extraEnvVarsSecret
+            cnfd:value-type: string
+        -   cnfd:name: metrics.image.repository
+            cnfd:value-type: string
+        -   cnfd:name: custom-config
+            cnfd:value-type: string
+        -   cnfd:name: nodeAffinityPreset.values
+            cnfd:value-type: array
+        -   cnfd:name: healthIngress.path
+            cnfd:value-type: string
+        -   cnfd:name: containerPorts.https
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.gitClone.command
+            cnfd:value-type: array
+        -   cnfd:name: release.name
+            cnfd:value-type: string
+        -   cnfd:name: pdb.maxUnavailable
+            cnfd:value-type: number
+        -   cnfd:name: diagnosticMode.command
+            cnfd:value-type: array
+        -   cnfd:name: metrics.port
+            cnfd:value-type: string
+        -   cnfd:name: service.nodePorts.http
+            cnfd:value-type: string
+        -   cnfd:name: metrics.image.registry
+            cnfd:value-type: string
+        -   cnfd:name: service.loadBalancerIP
+            cnfd:value-type: string
+        -   cnfd:name: startupProbe.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: nodeAffinityPreset.type
+            cnfd:value-type: string
+        -   cnfd:name: metrics.prometheusRule.rules
+            cnfd:value-type: array
+        -   cnfd:name: healthIngress.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: metrics.service.annotations.prometheus.io/scrape
+            cnfd:value-type: string
+        -   cnfd:name: healthIngress.extraRules
+            cnfd:value-type: array
+        -   cnfd:name: metrics.serviceMonitor.jobLabel
+            cnfd:value-type: string
+        -   cnfd:name: livenessProbe.periodSeconds
+            cnfd:value-type: number
+        -   cnfd:name: service.ports.http
+            cnfd:value-type: number
+        -   cnfd:name: updateStrategy.type
+            cnfd:value-type: string
+        -   cnfd:name: diagnosticMode.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: healthIngress.pathType
+            cnfd:value-type: string
+        -   cnfd:name: hostAliases
+            cnfd:value-type: array
+        -   cnfd:name: image.digest
+            cnfd:value-type: string
+        -   cnfd:name: ingress.extraTls
+            cnfd:value-type: array
+        -   cnfd:default-value: default
+            cnfd:name: release.namespace
+            cnfd:value-type: string
+        -   cnfd:name: metrics.serviceMonitor.metricRelabelings
+            cnfd:value-type: array
+        -   cnfd:name: metrics.serviceMonitor.interval
+            cnfd:value-type: string
+        -   cnfd:name: startupProbe.initialDelaySeconds
+            cnfd:value-type: number
+        -   cnfd:name: fullnameOverride
+            cnfd:value-type: string
+        -   cnfd:name: startupProbe.successThreshold
+            cnfd:value-type: number
+        -   cnfd:name: metrics.service.port
+            cnfd:value-type: number
+        -   cnfd:name: containerSecurityContext.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: service.externalTrafficPolicy
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: serviceAccount.automountServiceAccountToken
+            cnfd:value-type: boolean
+        -   cnfd:name: ingress.extraHosts
+            cnfd:value-type: array
+        -   cnfd:name: healthIngress.tls
+            cnfd:value-type: boolean
+        -   cnfd:name: cloneStaticSiteFromGit.image.pullSecrets
+            cnfd:value-type: array
+        -   cnfd:name: service.type
+            cnfd:value-type: string
+        -   cnfd:name: ingress.ingressClassName
+            cnfd:value-type: string
+        -   cnfd:name: cloneStaticSiteFromGit.image.tag
+            cnfd:value-type: string
+        -   cnfd:name: service.clusterIP
+            cnfd:value-type: string
+        -   cnfd:name: tolerations
+            cnfd:value-type: array
+        -   cnfd:name: serverBlock
+            cnfd:value-type: string
+        -   cnfd:name: service.extraPorts
+            cnfd:value-type: array
+        -   cnfd:name: ingress.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: readinessProbe.initialDelaySeconds
+            cnfd:value-type: number
+        -   cnfd:name: ingress.selfSigned
+            cnfd:value-type: boolean
+        -   cnfd:name: cloneStaticSiteFromGit.image.digest
+            cnfd:value-type: string
+        -   cnfd:name: containerPorts.http
+            cnfd:value-type: number
+        -   cnfd:name: containerSecurityContext.runAsNonRoot
+            cnfd:value-type: boolean
+        -   cnfd:name: service.targetPort.https
+            cnfd:value-type: string
+        -   cnfd:name: service.ports.https
+            cnfd:value-type: number
+        -   cnfd:name: startupProbe.failureThreshold
+            cnfd:value-type: number
+        -   cnfd:name: livenessProbe.failureThreshold
+            cnfd:value-type: number
+        -   cnfd:name: serviceAccount.create
+            cnfd:value-type: boolean
+        -   cnfd:name: ingress.path
+            cnfd:value-type: string
+        -   cnfd:name: clusterDomain
+            cnfd:value-type: string
+        -   cnfd:name: podAffinityPreset
+            cnfd:value-type: string
+        -   cnfd:name: image.repository
+            cnfd:value-type: string
+        -   cnfd:name: healthIngress.selfSigned
+            cnfd:value-type: boolean
+        -   cnfd:name: healthIngress.extraPaths
+            cnfd:value-type: array
+        -   cnfd:name: readinessProbe.successThreshold
+            cnfd:value-type: number
+        -   cnfd:name: ingress.hostname
+            cnfd:value-type: string
+        -   cnfd:name: image.pullPolicy
+            cnfd:value-type: string
+        -   cnfd:name: metrics.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: cloneStaticSiteFromGit.branch
+            cnfd:value-type: string
+        -   cnfd:name: namespaceOverride
+            cnfd:value-type: string
+        -   cnfd:name: healthIngress.extraHosts
+            cnfd:value-type: array
+        -   cnfd:name: healthIngress.extraTls
+            cnfd:value-type: array
+        -   cnfd:name: startupProbe.periodSeconds
+            cnfd:value-type: number
+        -   cnfd:name: metrics.serviceMonitor.enabled
+            cnfd:value-type: boolean
+        -   cnfd:name: ingress.secrets
+            cnfd:value-type: array
+        cnfd:vendor: DZS
+        cnfd:version: 14.0.0
